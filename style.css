@@ -1,0 +1,224 @@
+
+/* 1. Common styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f5f9;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.app {
+    width: min(900px, 92%);
+    margin: 35px auto;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+h1, h2, p {
+    margin-top: 0;
+}
+
+.app-header p,
+.bubble-section p {
+    color: #697386;
+}
+
+/* 2. Form and sections */
+.form-section,
+.task-section,
+.bubble-section {
+    background: white;
+    padding: 22px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd2dc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: white;
+    color: #222;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #8baaff;
+    border-color: #476ee8;
+}
+
+button {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    background: #476ee8;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+#addBtn {
+    margin-top: 8px;
+}
+
+/* 3. Task cards */
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 15px;
+}
+
+.task-card {
+    border: 1px solid #dce1eb;
+    border-left: 5px solid #476ee8;
+    padding: 16px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+}
+
+.task-card h3 {
+    margin: 0 0 10px;
+}
+
+.task-category {
+    color: #697386;
+    font-size: 13px;
+}
+
+.task-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.task-actions button {
+    padding: 8px 10px;
+}
+
+.complete-btn {
+    background: #198754;
+}
+
+.edit-btn {
+    background: #d98a13;
+}
+
+.delete-btn {
+    background: #dc3545;
+}
+
+.task-card.completed {
+    border-left-color: #198754;
+    background: #eaf8ef;
+}
+
+.task-card.completed h3 {
+    text-decoration: line-through;
+    color: #68766d;
+}
+
+#emptyMessage {
+    color: #697386;
+}
+
+/* 4. Event bubbling demo */
+.grandparent {
+    background: #e5edff;
+    color: #243b72;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.parent {
+    background: #cbd9ff;
+    padding: 20px;
+    margin-top: 12px;
+    border-radius: 10px;
+}
+
+#childBtn {
+    display: block;
+    margin-top: 12px;
+}
+
+/* 5. Dark theme */
+body.dark-theme {
+    background: #151923;
+    color: #f2f4f8;
+}
+
+body.dark-theme .form-section,
+body.dark-theme .task-section,
+body.dark-theme .bubble-section {
+    background: #222938;
+    box-shadow: none;
+}
+
+body.dark-theme input,
+body.dark-theme select {
+    background: #151923;
+    color: #f2f4f8;
+    border-color: #505a6d;
+}
+
+body.dark-theme .task-card {
+    border-color: #505a6d;
+}
+
+body.dark-theme .task-card.completed {
+    background: #243b30;
+}
+
+body.dark-theme .grandparent {
+    background: #263653;
+    color: #f2f4f8;
+}
+
+body.dark-theme .parent {
+    background: #374968;
+    color: #f2f4f8;
+}
+
+/* 6. Mobile layout */
+@media (max-width: 520px) {
+    .app {
+        margin: 20px auto;
+    }
+
+    .app-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-section,
+    .task-section,
+    .bubble-section {
+        padding: 16px;
+    }
+}

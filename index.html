@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="app">
+         <header class="app-header">
+            <div>
+                <h1>My Task Manager</h1>
+                <p>Plan your day, one task at a time.</p>
+            </div>
+
+            <button type="button" id="themeBtn">
+                Toggle Theme
+            </button>
+        </header>
+
+        <section class="form-section">
+            <h2>Add a Task</h2>
+
+            <form id="taskForm">
+                <label for="taskTitle">Task Title</label>
+                <input
+                    type="text"
+                    id="taskTitle"
+                    placeholder="Enter your task..."
+                    required
+                >
+
+                <label for="taskCategory">Category</label>
+                <select id="taskCategory">
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                    <option value="Personal">Personal</option>
+                </select>
+
+                <button type="submit" id="addBtn">
+                    Add Task
+                </button>
+            </form>
+        </section>
+
+        <section class="task-section">
+            <h2>Your Tasks</h2>
+
+            <p id="taskCount">Total tasks: 0</p>
+
+            <!-- One parent handles all task button clicks -->
+            <div id="taskList" class="task-list">
+                <p id="emptyMessage">No tasks yet. Add your first task!</p>
+            </div>
+        </section>
+
+
+
+    </main>
+
+</body>
+</html>
